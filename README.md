@@ -1,0 +1,1 @@
+# ZAISD_algorytmy
