@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 10000
+#define SIZE 100000
 using namespace std;
 
 void printArray(int arr[], int size)  
@@ -108,20 +108,18 @@ void boubbeSortParallel(int* B){
 		}
 		if (ptr == -1)
 		{
-			break; //error
+			break;
 		}
 		B[startingBufor[ptr]] = -1;
 		B_prim[ind++] = buf;
 		startingBufor[ptr]++;
 		partSize[ptr]--;
 	}
-	// printArray (B_prim, SIZE); // here is sorted array
 	double end=omp_get_wtime();
 
+	// printArray (B_prim, SIZE); // here is sorted array
 	cout << "Czas rownolegle: " << (end-start) << endl;
 }
-
-
 
 int main (int argc, char *argv[]) {
 
